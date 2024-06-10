@@ -1385,17 +1385,6 @@
               ""
             ],
             "lineageTag": "14d1ab33-af6a-4610-9a18-2ae544c25a0c"
-          },
-          {
-            "name": "JUST A TEST",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "expression": "\"just a test\"",
-            "lineageTag": "0b318956-c588-456c-a0c5-19e6b7884b30"
           }
         ],
         "partitions": [
