@@ -1,0 +1,18 @@
+EVALUATE
+VAR source =
+ ADDCOLUMNS(
+	SUMMARIZE(
+		Sales,
+		'Calendar'[Year-Month Sort],
+		'Product'[BrandName]
+	),
+	"@sales", [Sales Amount]
+ )
+VAR filteredSource = FILTER( source, [@sales] > 12E6 )
+VAR result = 
+ADDCOLUMNS(
+	Geography,
+	"@sales", [Sales Amount],
+	"@salesBrandFiltered", CALCULATE( [Sales Amount], filteredSource )
+)
+return result ORDER BY [@sales] DESC

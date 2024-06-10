@@ -1,0 +1,13 @@
+EVALUATE 
+VAR Source = 
+ADDCOLUMNS(
+	SUMMARIZE(
+		Sales,
+		'Product'[BrandName],
+		'Calendar'[Year]
+	),
+	"@Sales", [Sales Amount]
+)
+VAR FilteredSource = FILTER( Source, [@Sales] > 2E8 )
+
+RETURN FilteredSource

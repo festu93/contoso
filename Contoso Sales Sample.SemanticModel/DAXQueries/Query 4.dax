@@ -1,0 +1,30 @@
+EVALUATE
+VAR YesDataLineage = 
+ADDCOLUMNS(
+	VALUES( 'Product'[BrandName] ),
+	"@Sales", [Sales Amount]
+)
+
+VAR source = 
+ADDCOLUMNS(
+	VALUES( 'Product'[BrandName] ),
+	"@ADDC BrandName", 'Product'[BrandName]
+)
+VAR NewSource = 
+SELECTCOLUMNS(
+	source,
+	"BrandName", [@ADDC BrandName]
+)
+VAR NoDataLineage = 
+ADDCOLUMNS(
+	NewSource,
+	"@sales", [Sales Amount]
+)
+
+VAR TreatAsBrandName = TREATAS( NewSource, 'Product'[BrandName] )
+VAR RipristinatedDataLineage = 
+ADDCOLUMNS(
+	TreatAsBrandName,
+	"@sales", [Sales Amount]
+)
+return NewSource

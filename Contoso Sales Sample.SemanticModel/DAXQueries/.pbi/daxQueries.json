@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "tabOrder": [
+    "Query 1",
+    "data lineage",
+    "Query 2",
+    "Query 3",
+    "Query 4",
+    "Query 5"
+  ],
+  "defaultTab": "Query 4"
+}

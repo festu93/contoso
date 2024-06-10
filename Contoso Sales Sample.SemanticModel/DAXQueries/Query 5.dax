@@ -1,0 +1,5 @@
+EVALUATE
+ADDCOLUMNS(
+    ALLSELECTED( 'Product'[BrandName] ),
+    "@Last Date", CALCULATE( MAX( Sales[DateKey] ) )
+)

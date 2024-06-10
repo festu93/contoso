@@ -1,0 +1,20 @@
+
+EVALUATE
+VAR source = 
+ADDCOLUMNS(
+	VALUES( 'Product'[BrandName] ),
+	"@sales", [Sales Amount]
+)
+VAR newsource = 
+ADDCOLUMNS(
+	VALUES( 'Product'[BrandName] ),
+	"@New", 'Product'[BrandName]
+)
+VAR s = 
+SELECTCOLUMNS(
+	newsource,
+	"C", [@New]
+)
+VAR treatass = TREATAS( s, 'Product'[BrandName] )
+VAR ADDC = ADDCOLUMNS( treatass, "@s", [Sales Amount] )
+RETURN source
