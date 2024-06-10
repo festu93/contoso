@@ -1385,17 +1385,6 @@
               ""
             ],
             "lineageTag": "14d1ab33-af6a-4610-9a18-2ae544c25a0c"
-          },
-          {
-            "name": "Measure",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ],
-            "expression": "1",
-            "lineageTag": "d0d1e6c3-0287-4e9a-a157-419e314665a6"
           }
         ],
         "partitions": [
